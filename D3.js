@@ -113,7 +113,8 @@ const charactersNames = [];
   Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO", "R2-D2", etc..]
 */
 for (let index = 0; index < starWarsCharacters.length; index++) {
-  charactersNames.push(starWarsCharacters[index].name);
+  let charact = starWarsCharacters[index];
+  charactersNames.push(charact.name);
 }
 console.log(charactersNames);
 
@@ -183,7 +184,8 @@ let crewMass = 0;
 let index = 0;
 
 while (index < starWarsCharacters.length) {
-  crewMass += starWarsCharacters[index].mass;
+  let character = starWarsCharacters[index];
+  crewMass += character.mass;
   index++;
 }
 
@@ -198,7 +200,7 @@ console.log(crewMass);
   Se la massa è superiore a 900 e inferiore a 1000 stampa in console: "Critical Load: Over 900"
   Se la massa è superiore a 1000 stampa in console: "DANGER! OVERLOAD ALERT: escape from ship now!"
 
-  Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
+  
 */
 if (crewMass < 500) {
   console.log("Ship is under loaded");
@@ -211,6 +213,8 @@ if (crewMass < 500) {
 } else if (crewMass > 1000) {
   console.log("DANGER! OVERLOAD ALERT: escape from ship now!");
 }
+
+/* Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso. */
 
 starWarsCharacters[0].mass = 10;
 
@@ -237,7 +241,14 @@ if (crewMass < 500) {
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
-
+let genderRobot = 0;
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  let character = starWarsCharacters[i];
+  if (character.gender === "n/a") {
+    character.gender = "robot";
+    console.log(character);
+  }
+}
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
